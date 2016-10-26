@@ -66,7 +66,7 @@ describe("About Applying What We Have Learnt", function() {
   });
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
-    var sum = FILL_ME_IN;    /* try chaining range() and reduce() */
+   var sum = FILL_ME_IN;    /* try chaining range() and reduce() */
    var theNumber = _.range(0,233169).reduce(function(total,number){
         if(number% 3 === 0 || number&5 === 0){
           total += number
@@ -87,15 +87,24 @@ describe("About Applying What We Have Learnt", function() {
         }
     }
 
-    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+    expect(ingredientCount['mushrooms']).toBe(2);
   });
 
   it("should count the ingredient occurrence (functional)", function () {
     var ingredientCount = { "{ingredient name}": 0 };
-
     /* chain() together map(), flatten() and reduce() */
+    var ingredientCount = _.flatten(products.map(function(pizza){
+       return pizza["ingredients"]})).reduce(function(object,ingredient){
+         if(object[ingredient] === undefined){
+          object[ingredient] = 1
+         }
+         else{
+          object[ingredient] +=1
+         }
+         return object
+    },{})    
 
-    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+    expect(ingredientCount['mushrooms']).toBe(2);
   });
 
   /*********************************************************************************/
